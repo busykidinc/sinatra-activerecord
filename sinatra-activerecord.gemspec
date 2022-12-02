@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   # spec.add_dependency "example-gem", "~> 1.0"
   spec.add_dependency "activerecord", ">= 4.1"
   spec.add_dependency "activesupport", ">= 4.1"
-  spec.add_dependency "sinatra", "~> 3.0.4"
+  spec.add_dependency "sinatra", "~> 2.0.3"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
