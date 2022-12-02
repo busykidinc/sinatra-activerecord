@@ -1,40 +1,49 @@
-# frozen_string_literal: true
+# -*- encoding: utf-8 -*-
+# stub: sinatra-activerecord 2.0.13 ruby lib
 
-require_relative "lib/sinatra/activerecord/version"
+Gem::Specification.new do |s|
+  s.name = "sinatra-activerecord".freeze
+  s.version = "2.0.13"
 
-Gem::Specification.new do |spec|
-  spec.name = "sinatra-activerecord"
-  spec.version = Sinatra::Activerecord::VERSION
-  spec.authors = ["Nathan Anderson"]
-  spec.email = ["na@busykid.com"]
+  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib".freeze]
+  s.authors = ["Blake Mizerany".freeze, "Janko Marohni\u0107".freeze]
+  s.date = "2022-11-28"
+  s.description = "Extends Sinatra with ActiveRecord helpers.".freeze
+  s.email = "janko.marohnic@gmail.com".freeze
+  s.files = ["LICENSE".freeze, "README.md".freeze, "lib/sinatra".freeze, "lib/sinatra/activerecord".freeze, "lib/sinatra/activerecord.rb".freeze, "lib/sinatra/activerecord/rake".freeze, "lib/sinatra/activerecord/rake.rb".freeze, "lib/sinatra/activerecord/rake/activerecord_3.rb".freeze, "lib/sinatra/activerecord/rake/activerecord_4.rb".freeze, "lib/sinatra/activerecord/rake/activerecord_5.rb".freeze, "lib/sinatra/activerecord/rake/helpers.rb".freeze, "lib/sinatra/activerecord/tasks.rake".freeze]
+  s.homepage = "http://github.com/janko-m/sinatra-activerecord".freeze
+  s.licenses = ["MIT".freeze]
+  s.required_ruby_version = Gem::Requirement.new(">= 1.9.2".freeze)
+  s.rubygems_version = "3.0.3".freeze
+  s.summary = "Extends Sinatra with ActiveRecord helpers.".freeze
 
-  spec.summary = "Extends Sinatra with extension methods and Rake tasks for dealing with an SQL database using the ActiveRecord ORM"
-  spec.homepage = "https://github.com/busykidinc/sinatra-activerecord"
-  spec.required_ruby_version = ">= 2.6.0"
+  s.installed_by_version = "3.0.3" if s.respond_to? :installed_by_version
 
-  spec.metadata["allowed_push_host"] = "https://github.com/busykidinc/sinatra-activerecord"
+  if s.respond_to? :specification_version then
+    s.specification_version = 4
 
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = spec.homepage
-  spec.metadata["changelog_uri"] = spec.homepage
-
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files = Dir.chdir(__dir__) do
-    `git ls-files -z`.split("\x0").reject do |f|
-      (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<sinatra>.freeze, [">= 1.0"])
+      s.add_runtime_dependency(%q<activerecord>.freeze, [">= 3.2"])
+      s.add_development_dependency(%q<rake>.freeze, [">= 0"])
+      s.add_development_dependency(%q<rspec>.freeze, ["~> 3.1"])
+      s.add_development_dependency(%q<sqlite3>.freeze, [">= 0"])
+      s.add_development_dependency(%q<appraisal>.freeze, [">= 0"])
+    else
+      s.add_dependency(%q<sinatra>.freeze, [">= 1.0"])
+      s.add_dependency(%q<activerecord>.freeze, [">= 3.2"])
+      s.add_dependency(%q<rake>.freeze, [">= 0"])
+      s.add_dependency(%q<rspec>.freeze, ["~> 3.1"])
+      s.add_dependency(%q<sqlite3>.freeze, [">= 0"])
+      s.add_dependency(%q<appraisal>.freeze, [">= 0"])
     end
+  else
+    s.add_dependency(%q<sinatra>.freeze, [">= 1.0"])
+    s.add_dependency(%q<activerecord>.freeze, [">= 3.2"])
+    s.add_dependency(%q<rake>.freeze, [">= 0"])
+    s.add_dependency(%q<rspec>.freeze, ["~> 3.1"])
+    s.add_dependency(%q<sqlite3>.freeze, [">= 0"])
+    s.add_dependency(%q<appraisal>.freeze, [">= 0"])
   end
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
-
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
-  spec.add_dependency "activerecord", ">= 4.1"
-  spec.add_dependency "activesupport", ">= 4.1"
-  spec.add_dependency "sinatra", "~> 2.0.3"
-
-  # For more information and examples about making a new gem, check out our
-  # guide at: https://bundler.io/guides/creating_gem.html
 end

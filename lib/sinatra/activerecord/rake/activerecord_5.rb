@@ -1,3 +1,5 @@
+require_relative "helpers"
+
 seed_loader = Class.new do
   def load_seed
     load "#{ActiveRecord::Tasks::DatabaseTasks.db_dir}/seeds.rb"
@@ -6,7 +8,7 @@ end
 
 ActiveRecord::Tasks::DatabaseTasks.tap do |config|
   config.root                   = Rake.application.original_dir
-  config.env                    = ENV["APP_ENV"] || ENV["RACK_ENV"] || "development"
+  config.env                    = ENV["RACK_ENV"] || "development"
   config.db_dir                 = "db"
   config.migrations_paths       = ["db/migrate"]
   config.fixtures_path          = "test/fixtures"

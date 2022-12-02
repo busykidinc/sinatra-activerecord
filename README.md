@@ -4,11 +4,6 @@ Extends [Sinatra](http://www.sinatrarb.com/) with extension methods and Rake
 tasks for dealing with an SQL database using the
 [ActiveRecord ORM](https://github.com/rails/rails/tree/master/activerecord).
 
-![test badge](https://github.com/sinatra-activerecord/sinatra-activerecord/workflows/rspec/badge.svg)
-
-## Requirement
-ActiveRecord >= 4.1
-
 ## Setup
 
 Put it in your `Gemfile`, along with the adapter of your database. For
@@ -34,12 +29,6 @@ set :database, {adapter: "sqlite3", database: "foo.sqlite3"}
 If you have a `config/database.yml`, it will automatically be loaded, no need
 to specify it. Also, in production, the `$DATABASE_URL` environment variable
 will automatically be read as the database (if you haven't specified otherwise).
-
-If both `config/database.yml` and `$DATABASE_URL` are present, the database configuration of this two will be merged, with $DATABASE_URL's variable taking precedence over database.yml (for the same variable / key).
-
-
-Note: If you are using ActiveRecord 6.0 and above, and have [defined multiple databases](https://guides.rubyonrails.org/active_record_multiple_databases.html#setting-up-your-application) for the database.yml, the $DATABASE_URL configuration will be discarded, following [Active Record convention here](https://github.com/rails/rails/blob/main/activerecord/lib/active_record/database_configurations.rb#L169).
-
 
 Note that in **modular** Sinatra applications you will need to first register
 the extension:
@@ -153,33 +142,8 @@ This gem was made in 2009 by Blake Mizerany, creator of Sinatra.
 
 ## Social
 
-You can follow Janko on Twitter, [@jankomarohnic](http://twitter.com/jankomarohnic).
-You can follow Axel on Twitter, [@soulchildpls](http://twitter.com/soulchildpls).
+You can follow me on Twitter, I'm [@jankomarohnic](http://twitter.com/jankomarohnic).
 
 ## License
 
-[MIT](https://github.com/sinatra-activerecord/sinatra-activerecord/blob/master/LICENSE)
-
-## Installation
-
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add sinatra-activerecord
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install sinatra-activerecord
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sinatra-activerecord.
+[MIT](https://github.com/janko-m/sinatra-activerecord/blob/master/LICENSE)
